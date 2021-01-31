@@ -1,0 +1,47 @@
+html {
+  font-family: 'Manrope', sans-serif;
+  box-sizing: border-box;
+  font-weight: $font-md;
+  font-size: rem(15px);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+  font-size: rem(15px);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.block {
+  display: block;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.container {
+  padding: 0 rem(20px);
+}
+
+.bold {
+  font-weight: $font-md;
+}
+
+.bolder {
+  font-weight: $font-lg;
+}
+
+.flex {
+  display: flex;
+}
+
+.items-center {
+  justify-content: center;
+  align-items: center;
+}
