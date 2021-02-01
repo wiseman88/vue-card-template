@@ -10,11 +10,18 @@ html {
   margin: 0;
   box-sizing: inherit;
   font-size: rem(15px);
+  color: $grayish-blue;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
 }
 
 .block {
@@ -26,7 +33,7 @@ a {
 }
 
 .container {
-  padding: 0 rem(20px);
+  padding: 0 rem(30px);
 }
 
 .bold {

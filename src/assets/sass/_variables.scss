@@ -15,3 +15,22 @@ $dark-saturated-blue: hsl(227, 35%, 25%);
 // Font bold
 $font-md: 600;
 $font-lg: 800;
+
+// Buttons
+
+.btn {
+  display: inline-block;
+  background-color: $dark-saturated-blue;
+  color: $pale-blue;
+  font-weight: $font-md;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-top: rem(30px);
+  padding: rem(15px) rem(50px);
+  border-radius: rem(25px);
+  -webkit-border-radius: rem(25px);
+  -moz-border-radius: rem(25px);
+  -ms-border-radius: rem(25px);
+  -o-border-radius: rem(25px);
+}
