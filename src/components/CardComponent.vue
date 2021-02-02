@@ -56,12 +56,12 @@ export default {
   },
   data(){
     return {
-      rangeNumber: 100000
+      rangeNumber: '100K'
     }
   },
   methods: {
     setStep(){
-      let values = [10000,50000,100000,500000,1000000];    //values to step to
+      let values = ['10K','50K','100K','500K','1M'];    //values to step to
 
       const input = document.getElementById('input');
       let output = document.getElementById('output');
@@ -72,6 +72,26 @@ export default {
       input.oninput(); //set default value
 
       this.rangeNumber = output.innerHTML;
+
+      // switch (this.rangeNumber) {
+      //   case '10000':
+      //     this.rangeNumber = '10K'
+      //     break;
+      //   case '50000':
+      //     this.rangeNumber = '50K'
+      //     break;
+      //   case '100000':
+      //     this.rangeNumber = '100K'
+      //     break;
+      //   case '500000':
+      //     this.rangeNumber = '500K'
+      //     break;
+      //   case '1000000':
+      //     this.rangeNumber = '1M'
+      //     break;
+      //   default:
+      //     break;
+      // }
     },
   },
 
