@@ -3,7 +3,7 @@
     <div class="card">
       <div class="upper-card">
         <span class="block uppercase views">
-          {{ rangeNumber }} Pageviews
+          {{ rangeNumber.views }} Pageviews
         </span>
         <div class="slider">
           <input id="input" type="range" min="0" value="2" max="4" step="1" @change="setStep()">
@@ -12,7 +12,7 @@
         </div>
         <div class="price-content flex items-center">
           <span class="bolder price">
-            $16.00
+            ${{rangeNumber.price}}.00
           </span>
           <span>/ month</span>
         </div>
@@ -56,7 +56,32 @@ export default {
   },
   data(){
     return {
-      rangeNumber: '100K'
+      rangeNumber: {
+        views: '100K',
+        price: '16',
+      },
+      rangeSliderData: [
+        {
+          views: '10K',
+          price: '8'
+        },
+        {
+          views: '50K',
+          price: '12'
+        },
+        {
+          views: '100K',
+          price: '16'
+        },
+        {
+          views: '500K',
+          price: '20'
+        },
+        {
+          views: '1M',
+          price: '24'
+        },
+      ]
     }
   },
   methods: {
@@ -71,23 +96,31 @@ export default {
       };
       input.oninput(); //set default value
 
-      this.rangeNumber = output.innerHTML;
+      this.rangeNumber.views = output.innerHTML;
 
-      // switch (this.rangeNumber) {
-      //   case '10000':
-      //     this.rangeNumber = '10K'
+      this.rangeSliderData.forEach(data => {
+        switch (this.rangeNumber.views) {
+          case data.views:
+            this.rangeNumber.price = data.price 
+            break;
+        }
+      });
+
+      // switch (this.rangeNumber.views) {
+      //   case '10K':
+      //     this.rangeNumber.price = '8'
       //     break;
-      //   case '50000':
-      //     this.rangeNumber = '50K'
+      //   case '50K':
+      //     this.rangeNumber.price = '12'
       //     break;
-      //   case '100000':
-      //     this.rangeNumber = '100K'
+      //   case '100K':
+      //     this.rangeNumber.price = '16'
       //     break;
-      //   case '500000':
-      //     this.rangeNumber = '500K'
+      //   case '500K':
+      //     this.rangeNumber.price = '20'
       //     break;
-      //   case '1000000':
-      //     this.rangeNumber = '1M'
+      //   case '1M':
+      //     this.rangeNumber.price = '24'
       //     break;
       //   default:
       //     break;
