@@ -15,10 +15,8 @@ export default {
 @import '/src/assets/sass/_app';
 
   .attribution {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    display: block;
     padding: rem(20px);
+    padding-top: rem(80px);
   }
 </style>

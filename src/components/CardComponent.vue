@@ -105,26 +105,6 @@ export default {
             break;
         }
       });
-
-      // switch (this.rangeNumber.views) {
-      //   case '10K':
-      //     this.rangeNumber.price = '8'
-      //     break;
-      //   case '50K':
-      //     this.rangeNumber.price = '12'
-      //     break;
-      //   case '100K':
-      //     this.rangeNumber.price = '16'
-      //     break;
-      //   case '500K':
-      //     this.rangeNumber.price = '20'
-      //     break;
-      //   case '1M':
-      //     this.rangeNumber.price = '24'
-      //     break;
-      //   default:
-      //     break;
-      // }
     },
   },
 
@@ -133,56 +113,6 @@ export default {
 
 <style lang="scss">
 @import '/src/assets/sass/_app';
-
-  .card-content {
-  position: relative;
-  z-index: 10;
-  margin: 0 auto;
-
-  h1 {
-    font-weight: $font-lg;
-    font-size: rem(26px);
-    color: $dark-saturated-blue;
-    padding-top: rem(95px);
-    padding-bottom: rem(16px);
-  }
-
-  .heading-2 {
-    h2 {
-      color: $grayish-blue;
-      font-weight: $font-md;
-      font-size: rem(16px);
-
-      &:not(:last-of-type) {
-        margin-bottom: rem(6px);
-      }
-    }
-  }
-
-  .price-content {
-    margin-bottom: rem(44px);
-  }
-
-  .price {
-    margin-right: rem(10px);
-    font-size: rem(45px);
-    color: $dark-saturated-blue;
-    letter-spacing: rem(- 1.5px);
-  }
-
-  .check {
-    margin-bottom: 14px;
-  }
-
-  .check-icon {
-    margin-right: rem(20px);
-
-    img {
-      width: 10px;
-      height: 10px;
-    }
-  }
-}
 
 .card {
   display: inline-block;
@@ -206,5 +136,35 @@ export default {
   padding-left: rem(20px);
   padding-right: rem(20px);
   padding-bottom: rem(39px);
+}
+
+.slider {
+  position: relative;
+  margin-bottom: rem(30px);
+}
+
+input[type='range'] {
+  -webkit-appearance: none; 
+  width: 100%;
+  background-color: $soft-cyan;
+  outline: none;
+  height: rem(8px);
+  border-radius: rem(20px);
+
+  &::-webkit-slider-thumb {
+    position: relative;
+    -webkit-appearance: none;
+    height: rem(40px);
+    width: rem(40px);
+    border-radius: 50%;
+    background: $strong-cyan;
+    background-image: url('../assets/img/icon-slider.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    margin-top: -2px;
+    -webkit-box-shadow: 1px 14px 23px 5px rgba(16,213,194,0.34); 
+box-shadow: 1px 14px 23px 5px rgba(16,213,194,0.34);
+  }
 }
 </style>

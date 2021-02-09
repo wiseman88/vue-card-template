@@ -4,17 +4,20 @@
 
     </div>
     <div>
-      <div class="card-content">
-      <h1>
-      Simple, traffic-based pricing
-      </h1>
-      <div class="heading-2">
-        <h2>
-          Sign-up for our 30-day trial.
-        </h2>
-        <h2>
-          No credit card required. 
-        </h2>
+      <div class="card-wrapper">
+      <div>
+        <div class="circles"></div>
+        <h1 class="heading-1">
+          Simple, traffic-based pricing
+        </h1>
+        <div class="heading-2">
+          <h2>
+            Sign-up for our 30-day trial.
+          </h2>
+          <h2>
+            No credit card required. 
+          </h2>
+        </div>
       </div>
 
       <card-component></card-component>
@@ -45,7 +48,7 @@ export default {
   position: relative;
   text-align: center;
   z-index: 1;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .bg {
@@ -68,6 +71,71 @@ export default {
 .views {
   letter-spacing: rem(1px);
   font-weight: $font-lg;
+}
+
+  .card-wrapper {
+  position: relative;
+  z-index: 10;
+  margin: 0 auto;
+
+  h1 {
+    font-weight: $font-lg;
+    font-size: rem(20px);
+    color: $dark-saturated-blue;
+    padding-top: rem(95px);
+    padding-bottom: rem(16px);
+  }
+
+  .heading-2 {
+    h2 {
+      color: $grayish-blue;
+      font-weight: $font-md;
+      font-size: rem(14px);
+
+      &:not(:last-of-type) {
+        margin-bottom: rem(6px);
+      }
+    }
+  }
+
+  .price-content {
+    margin-bottom: rem(44px);
+  }
+
+  .price {
+    margin-right: rem(10px);
+    font-size: rem(45px);
+    color: $dark-saturated-blue;
+    letter-spacing: rem(- 1.5px);
+  }
+
+  .check {
+    margin-bottom: 14px;
+  }
+
+  .check-icon {
+    margin-right: rem(20px);
+
+    img {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}
+
+.circles {
+  position: absolute;
+  z-index: -1;
+  width: 145px;
+  height: 145px;
+  left: 0; 
+  right: 0;
+  top: rem(60px); 
+  margin-left: auto; 
+  margin-right: auto; 
+  background-image: url('./assets/img/pattern-circles.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 </style>
