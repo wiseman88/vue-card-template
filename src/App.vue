@@ -56,7 +56,7 @@ export default {
   top: 0;
   right: 0;
   z-index: 0;
-  min-height: 55vh;
+  min-height: 55%;
   width: 100%;
   background-image: url('./assets/img/bg-pattern.svg');
   background-size: cover;
@@ -64,16 +64,8 @@ export default {
   background-repeat: no-repeat;
 }
 
-.slider {
-  padding-top: rem(45px);
-}
 
-.views {
-  letter-spacing: rem(1px);
-  font-weight: $font-lg;
-}
-
-  .card-wrapper {
+.card-wrapper {
   position: relative;
   z-index: 10;
   margin: 0 auto;
@@ -98,19 +90,8 @@ export default {
     }
   }
 
-  .price-content {
-    margin-bottom: rem(44px);
-  }
-
-  .price {
-    margin-right: rem(10px);
-    font-size: rem(45px);
-    color: $dark-saturated-blue;
-    letter-spacing: rem(- 1.5px);
-  }
-
   .check {
-    margin-bottom: 14px;
+    margin: rem(12px) 0;
   }
 
   .check-icon {

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center">
+  <div id="switch-content" class="flex items-center">
     <span>Monthly Billing</span>
     <div class="block">
       <label class="switch">
@@ -7,9 +7,9 @@
         <span class="switch-slider round"></span>
       </label>
     </div>
-    <span>
-      Yearly Billing <span class="discount">-25%</span>
-    </span>
+    <div>
+      Yearly Billing <div class="discount">-25% <span>discount</span></div>
+    </div>
   </div>
 </template>
 
@@ -21,6 +21,19 @@ export default {
 
 <style lang="scss">
 @import '/src/assets/sass/_app';
+
+  #switch-content {
+    
+    margin-left: rem(100px);
+
+    @media(max-width: 1439px){
+      margin-left: rem(21px);
+    }
+
+    * {
+      font-size: rem(14px);
+    }
+  }
 
   .switch {
   position: relative;
@@ -39,10 +52,11 @@ export default {
   .switch-slider {
     position: absolute;
     cursor: pointer;
-    top: 0;
+    top: rem(2px);
     left: 0;
     right: 0;
     bottom: 0;
+    height: rem(26px);
     background-color: $pale-blue;
     -webkit-transition: .4s;
     transition: .4s;
@@ -51,13 +65,17 @@ export default {
   .switch-slider:before {
     position: absolute;
     content: "";
-    height: 20px;
-    width: 20px;
-    left: 4px;
+    height: rem(18px);
+    width: rem(18px);
+    left: 5px;
     bottom: 4px;
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
+  }
+
+  input[type=checkbox] {
+    margin-top: 5px;
   }
 
   input:checked + .switch-slider {
@@ -85,10 +103,19 @@ export default {
 }
 
 .discount {
+  display: inline-block;
   background-color: $light-grayish-red;
   color: $light-red;
   border-radius: 20px;
   padding: 3px 8px;
-  margin-left: 4px;
+  margin-left: rem(6px);
+
+  > span {
+    color: $light-red;
+
+    @media(max-width: 1439px) {
+      display: none;
+    }
+  }
 }
 </style>

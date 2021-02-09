@@ -2,46 +2,56 @@
   <div class="container">
     <div class="card">
       <div class="upper-card">
-        <span class="block uppercase views">
-          {{ rangeNumber.views }} Pageviews
-        </span>
-        <div class="slider">
-          <input id="input" type="range" min="0" value="2" max="4" step="1" @change="setStep()">
-          <div id="output" hidden>
-          </div>
-        </div>
-        <div class="price-content flex items-center">
-          <span class="bolder price">
-            ${{rangeNumber.price}}.00
+
+        <div class="grid-content">
+
+          <span class="uppercase views">
+            {{ rangeNumber.views }} Pageviews
           </span>
-          <span>/ month</span>
+          <div class="slider">
+            <input id="input" type="range" min="0" value="2" max="4" step="1" @change="setStep()">
+            <div id="output" hidden>
+            </div>
+          </div>
+          <div class="price-content flex items-center">
+            <span class="bolder price">
+              ${{rangeNumber.price}}.00
+            </span>
+            <span>/ month</span>
+        </div>
+
         </div>
 
         <switch-component></switch-component>
       </div>
-
       <div class="bottom-card">
-        <div class="flex items-center check">
-          <span class="check-icon flex items-center">
-            <img src="../assets/img/icon-check.svg" alt="">
-          </span>
-          <span>Unlimited websites</span>
+        <div id="bottom-card-content">
+          <div id="profits">
+            <div class="profit flex items-center check">
+              <span class="check-icon flex items-center">
+                <img src="../assets/img/icon-check.svg" alt="">
+              </span>
+              <span>Unlimited websites</span>
+            </div>
+            <div class="profit flex items-center check">
+              <span class="check-icon flex items-center">
+                <img src="../assets/img/icon-check.svg" alt="">
+              </span>
+              <span>100% data ownership</span>
+            </div>
+            <div class="profit flex items-center check">
+              <span class="check-icon flex items-center">
+                <img src="../assets/img/icon-check.svg" alt="">
+              </span>
+              <span>Email reports</span>
+            </div>
+          </div>
+          <div id="action-btn">
+            <button class="btn">
+              Start my trial
+            </button>
+          </div>
         </div>
-        <div class="flex items-center check">
-          <span class="check-icon flex items-center">
-            <img src="../assets/img/icon-check.svg" alt="">
-          </span>
-          <span>100% data ownership</span>
-        </div>
-        <div class="flex items-center check">
-          <span class="check-icon flex items-center">
-            <img src="../assets/img/icon-check.svg" alt="">
-          </span>
-          <span>Email reports</span>
-        </div>
-        <button class="btn">
-          Start my trial
-        </button>
       </div>
     </div>
   </div>
@@ -129,6 +139,29 @@ export default {
   padding-right: rem(20px);
   padding-bottom: rem(39px);
   border-bottom: 1px solid $light-grayish-blue;
+
+   @media(min-width: 1439px ) {
+    padding: rem(67px) rem(64px) rem(53px) rem(62px);
+  }
+}
+
+.grid-content {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  padding-bottom: rem(42px);
+  grid-template-areas: 
+  "views"
+  "slider"
+  "price-content";
+
+  @media(min-width: 1439px ) {
+    grid-template-columns: 50%;
+    grid-template-areas: 
+    "views price-content"
+    " slider slider";
+    padding-bottom: rem(75px);
+  }
 }
 
 .bottom-card {
@@ -136,11 +169,81 @@ export default {
   padding-left: rem(20px);
   padding-right: rem(20px);
   padding-bottom: rem(39px);
+
+  @media(min-width: 1439px ) {
+    padding: rem(50px) rem(60px);
+  }
+
+  #bottom-card-content {
+    @media(min-width: 1439px ) {
+      display: flex;
+    }
+  }
+
+  #profits {
+    padding-right: rem(90px);
+    @media(max-width: 1439px){
+      padding-right: 0;
+    }
+  }
+
+  .profit {
+    @media(min-width: 1439px) {
+      justify-content: left;
+    }
+  }
+
+  #action-btn {
+    padding-left: rem(90px);
+
+     @media(min-width: 1439px ) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media(max-width: 1439px){
+      padding-left: 0;
+    }
+  }
 }
 
 .slider {
+  grid-area: slider;
   position: relative;
-  margin-bottom: rem(30px);
+  padding-top: rem(45px);
+  padding-bottom: rem(50px);
+
+  @media(min-width: 1439px) {
+    padding-bottom: 0;
+  }
+}
+
+.views {
+  letter-spacing: rem(1px);
+  font-weight: $font-lg;
+  align-self: center;
+  justify-self: center;
+
+  @media(min-width: 1439px ) {
+    justify-self: left;
+  }
+}
+
+.price-content {
+  align-self: center;
+  justify-self: center;
+
+  @media(min-width: 1439px ) {
+    justify-self: right;
+  }
+}
+
+.price {
+  font-size: rem(45px);
+  color: $dark-saturated-blue;
+  letter-spacing: rem(- 1.5px);
+  margin-right: rem(10px);
 }
 
 input[type='range'] {
@@ -154,8 +257,8 @@ input[type='range'] {
   &::-webkit-slider-thumb {
     position: relative;
     -webkit-appearance: none;
-    height: rem(40px);
-    width: rem(40px);
+    height: rem(50px);
+    width: rem(50px);
     border-radius: 50%;
     background: $strong-cyan;
     background-image: url('../assets/img/icon-slider.svg');
