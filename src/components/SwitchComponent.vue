@@ -76,9 +76,10 @@ export default {
 
   input[type=checkbox] {
     margin-top: 5px;
+    
   }
 
-  input:checked + .switch-slider {
+  input:hover + .switch-slider {
     background-color: $strong-cyan;
   }
 

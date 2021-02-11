@@ -141,7 +141,7 @@ export default {
   border-bottom: 1px solid $light-grayish-blue;
 
    @media(min-width: 1439px ) {
-    padding: rem(67px) rem(64px) rem(53px) rem(62px);
+    padding: rem(57px) rem(54px) rem(43px) rem(52px);
   }
 }
 
@@ -171,7 +171,7 @@ export default {
   padding-bottom: rem(39px);
 
   @media(min-width: 1439px ) {
-    padding: rem(50px) rem(60px);
+    padding: rem(40px) rem(50px);
   }
 
   #bottom-card-content {
@@ -267,7 +267,21 @@ input[type='range'] {
     cursor: pointer;
     margin-top: -2px;
     -webkit-box-shadow: 1px 14px 23px 5px rgba(16,213,194,0.34); 
-box-shadow: 1px 14px 23px 5px rgba(16,213,194,0.34);
+    box-shadow: 1px 14px 23px 5px rgba(16,213,194,0.34);
+
+    &:hover {
+      background: $cyan;
+      background-image: url('../assets/img/icon-slider.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    &:active {
+      background: $strongest-cyan;
+      background-image: url('../assets/img/icon-slider.svg');
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
   }
 }
 </style>
