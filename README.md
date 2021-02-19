@@ -4,4 +4,4 @@ Card component made with Vue JS using frontend mentor template https://www.front
 
 ## Live Demo
 
-https://vue-card-template-hi5dturr7.vercel.app
+https://vue-card-template-git-master.wiseman88.vercel.app/
