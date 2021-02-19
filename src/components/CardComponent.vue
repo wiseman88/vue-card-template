@@ -66,6 +66,7 @@ export default {
   },
   data(){
     return {
+      percent: 50,
       rangeNumber: {
         views: '100K',
         price: '16',
@@ -106,7 +107,19 @@ export default {
       };
       input.oninput(); //set default value
 
+      input.addEventListener('mousemove', () => {
+        this.percent   = input.value * 25;
+        let color      = `linear-gradient(90deg,  hsl(174, 77%, 80%) ${this.percent}%,  hsl(224, 65%, 95%) ${this.percent}%)`;
+
+        input.style.background = color;
+      });
+
+
       this.rangeNumber.views = output.innerHTML;
+
+      this.percent = 100 * input.value / 4;
+
+      input.style.background = `linear-gradient(90deg, hsl(174, 77%, 80%) ${this.percent}%, hsl(224, 65%, 95%) ${this.percent})`;
 
       this.rangeSliderData.forEach(data => {
         switch (this.rangeNumber.views) {
@@ -117,7 +130,6 @@ export default {
       });
     },
   },
-
 };
 </script>
 
@@ -249,7 +261,7 @@ export default {
 input[type='range'] {
   -webkit-appearance: none; 
   width: 100%;
-  background-color: $soft-cyan;
+  background: linear-gradient(90deg, $soft-cyan 50%, $light-grayish-blue 50%);
   outline: none;
   height: rem(8px);
   border-radius: rem(20px);
