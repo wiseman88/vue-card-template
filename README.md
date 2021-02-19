@@ -1,7 +1,7 @@
-# Frontend Mentor - Interactive pricing component using Vue JS
+## Frontend Mentor - Interactive pricing component using Vue JS
 
-Card component made with Vue JS
+Card component made with Vue JS using frontend mentor template https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8
 
-# Live Demo
+## Live Demo
 
-<a href="https://vue-card-template-hi5dturr7.vercel.app/">https://vue-card-template-hi5dturr7.vercel.app/<a>
+https://vue-card-template-hi5dturr7.vercel.app
