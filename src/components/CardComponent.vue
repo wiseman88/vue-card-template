@@ -104,22 +104,17 @@ export default {
 
       input.oninput = function(){
           output.innerHTML = values[this.value];
+
+          this.percent   = input.value * 25;
+          let color      = `linear-gradient(90deg,  hsl(174, 77%, 80%) ${this.percent}%,  hsl(224, 65%, 95%) ${this.percent}%)`;
+
+          input.style.background = color;
       };
       input.oninput(); //set default value
-
-      input.addEventListener('mousemove', () => {
-        this.percent   = input.value * 25;
-        let color      = `linear-gradient(90deg,  hsl(174, 77%, 80%) ${this.percent}%,  hsl(224, 65%, 95%) ${this.percent}%)`;
-
-        input.style.background = color;
-      });
-
 
       this.rangeNumber.views = output.innerHTML;
 
       this.percent = 100 * input.value / 4;
-
-      input.style.background = `linear-gradient(90deg, hsl(174, 77%, 80%) ${this.percent}%, hsl(224, 65%, 95%) ${this.percent})`;
 
       this.rangeSliderData.forEach(data => {
         switch (this.rangeNumber.views) {
